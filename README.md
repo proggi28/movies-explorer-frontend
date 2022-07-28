@@ -1,1 +1,1 @@
-<a href="http://action.movie.nomoredomains.xyz/" target="_blank"></a>Домен</a>
+<a href="http://action.movie.nomoredomains.xyz/" target="_blank">Домен</a>
