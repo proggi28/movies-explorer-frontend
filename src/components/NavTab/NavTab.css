@@ -1,0 +1,37 @@
+.navigation {
+    min-height: 66px;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navigation__link {
+    margin: 0 40px 0 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}
+
+.navigation__link:last-child {
+    margin-right: 0;
+}
+
+.navigation__link:hover {
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+@media screen and (max-width: 490px) {
+    .navigation__link {
+        margin-right: 24px;
+        font-size: 11px;
+    }
+
+
+}
