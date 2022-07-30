@@ -1,0 +1,16 @@
+.movies {
+    background-color: #202020;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* @media screen and (max-width: 900px) {
+    .movies {
+        
+    }
+} */
+/* @media screen and (max-width: 900px) {
+    .movies {
+        max-width: 768px;
+    }
+} */

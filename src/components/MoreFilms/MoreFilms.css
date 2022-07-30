@@ -1,0 +1,45 @@
+.more-films {
+    background-color: #202020;
+    min-height: 166px;
+}
+
+.more-films__container {
+    margin: 50px auto 80px;
+    max-width: 1140px;
+}
+
+.more-films__button {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 1140px;
+    width: 100%;
+    min-height: 36px;
+    background-color: #2F2F2F;
+    border: none;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.more-films__button:hover {
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .more-films__container {
+        max-width: 708px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .more-films__container {
+        max-width: 300px;
+    }
+}
