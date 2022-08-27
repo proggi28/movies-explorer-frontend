@@ -63,6 +63,7 @@ class MainApi {
  const mainApi = new MainApi({
   baseUrl: 'https://api.movie-karpenko.nomoreparties.sbs',
   headers: {
+    Accept: "application/json",
     'Content-Type': 'application/json',
   },
 });
