@@ -7,15 +7,16 @@ import AboutMe from '../AboutMe/AboutMe';
 import Promo from '../Promo/Promo';
 
 function Main() {
-
     return (
-        <div className="content">
-            <Promo />
-            <NavTab />
-            <AboutProject />
-            <Techs />
-            <AboutMe />
-        </div>
+        <>
+            <main className="content">
+                <Promo />
+                <NavTab />
+                <AboutProject />
+                <Techs />
+                <AboutMe />
+            </main>
+        </>
     )
 }
 

@@ -37,8 +37,10 @@
 }
 
 .portfolio__link:hover {
-    opacity: .5;
-    transition: opacity .5s;
+    /* opacity: .5;
+    transition: opacity .5s; */
+    font-size: 40px;
+    transition: font-size .8s;
 }
 
 .portfolio__link:last-child {
@@ -67,14 +69,18 @@
     .portfolio {
         margin-top: 90px;
         margin-left: 50px;
+        margin-right: 50px;
     }
 }
 
 @media screen and (max-width: 490px) {
     .portfolio {
-        max-width: 292px;
-        margin: 0 auto;
+        margin: 0 14px;
         margin-top: 69px;
+    }
+
+    .portfolio__links {
+        justify-content: flex-start;
     }
 
     .portfolio__link {

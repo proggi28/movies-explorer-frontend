@@ -1,0 +1,221 @@
+.header-navigation {
+    margin: 0 auto;
+    background-color: #202020;
+    min-height: 74px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+}
+
+.header-navigation__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+}
+
+.header-navigation__links {
+    display: flex;
+    align-items: center;
+    margin-left: 44px;
+}
+
+.header-navigation__movies {
+    margin-right: 30px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+    font-size: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.header-navigation__movies:last-child {
+    margin-right: 0;
+}
+
+.header-navigation__movies:active {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.header-navigation__movies:hover {
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.header-navigation__burger {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.header-account {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 70px;
+}
+
+.header-account__button {
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    margin-right: 17px;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.header-account__button:hover {
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.header-account__logo {
+    background-image: url("../../images/logo-account.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 26px;
+    height: 30px;
+    background-color: #313131;
+    border-radius: 4px;
+}
+
+.header-account-button__text {
+    position: absolute;
+    left: -70px;
+    bottom: -10px;
+}
+
+.header-navigation__burger-button {
+    display: none;
+}
+
+.header-navigation__burger-menu_container {
+    width: 67.71%;
+    background: #202020;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-navigation-burger-menu_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+    .header-navigation {
+        justify-content: space-between;
+    }
+
+    .header-navigation__container {
+        display: none;
+    }
+
+    .header-navigation__burger-menu_close {
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        right: 22.44px;
+        top: 22.44px;
+        background: transparent;
+        border: none;
+        background-image: url("../../images/svg/Close.svg");
+        background-position: center;
+    }
+
+    .header-navigation__links {
+        flex-direction: column;
+        margin-top: 159px;
+    }
+
+    .header-navigation__movies {
+        font-size: 18px;
+        margin-bottom: 28px;
+    }
+
+    .header-account {
+        margin: 0 auto;
+        margin-bottom: 92px;
+    }
+
+    .header-navigation__burger-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: flex-end;
+        z-index: 1;
+        transition: 1s;
+    }
+
+    .header-navigation__burger-button {
+        margin-top: -6px;
+        background: transparent;
+        height: 44px;
+        width: 44px;
+        border: none;
+        transition: 1s;
+        cursor: pointer;
+        background-image: url("../../images/svg/burger.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        margin-right: 30px;
+        padding: 0;
+    }
+
+    .text-decoration_underline:hover {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .header-navigation__container {
+        max-width: 292px;
+        z-index: 2;
+    }
+
+    .header-navigation__burger-button {
+        margin-right: 14px;
+        width: 40px;
+        height: 43px;
+    }
+
+    .header-navigation__burger-menu_container {
+        width: 100%
+    }
+
+    .header-navigation__links {
+        margin: 144px auto 444px;
+    }
+
+    .header-navigation__movies {
+        line-height: 22px;
+    }
+}

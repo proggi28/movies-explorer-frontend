@@ -8,7 +8,7 @@ function PageNotFound() {
                 <div className="error-page__container">
                     <h2 className="error-page__header">404</h2>
                     <p className="error-page__text">Страница не найдена</p>
-                    <Link exact to="/" className="error-page__back-link">Назад</Link>
+                    <Link to="/" className="error-page__back-link">Назад</Link>
                 </div>
             </div>
     )

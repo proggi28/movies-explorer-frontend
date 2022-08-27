@@ -1,9 +1,24 @@
-import React from "react";
 import './Login.css';
 import logo from '../../images/png/header-logo.png'
 import { Link } from "react-router-dom";
+import { useForm } from '../../utils/useForm';
+import React, { useRef } from "react";
 
-function Login() {
+function Login({ handleSignIn }) {
+    const loginFormRef = useRef(null);
+    const form = useForm();
+
+    const { email, password } = form.values;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (email || password) {
+            handleSignIn(email, password);
+            loginFormRef.current.reset();
+        }
+    };
+
     return (
         <div className="login">
             <div className="login__container">
@@ -12,40 +27,50 @@ function Login() {
                 <form
                     name="login-form"
                     className="form login__form"
+                    ref={loginFormRef}
+                    onSubmit={handleSubmit}
                 >
                     <label className="login__label-name">Email
                         <input
                             name="email"
                             id="email-input"
                             type="email"
-                            className="login__input form__input input input_type_email"
+                            value={email || ''}
+                            onChange={form.handleChange}
+                            className="login__input"
                             placeholder="Введите email"
                             minLength="4"
                             maxLength="40"
                             required
+                            noValidate
                         />
                     </label>
-                    <span className="form__input-error email-input-error"></span>
+                    <span className="login__error">{`${form.errors.email ? form.errors.email : ""
+                        }`}</span>
 
                     <label className="login__label-name">Пароль
                         <input
                             name="password"
                             id="password-input"
                             type="password"
-                            className="login__input form__input input input_type_password"
+                            value={password || ''}
+                            onChange={form.handleChange}
+                            className="login__input"
                             placeholder="Введите пароль"
-                            minLength="2"
-                            maxLength="40"
+                            minLength="8"
                             required
+                            noValidate
                         />
                     </label>
-                    <span className="form__input-error password-input-error"></span>
-
-                    <button type="submit" className="login__submit-button form__submit">
+                    <span className="login__error">{`${form.errors.password ? form.errors.password : ""
+                        }`}</span>
+                    <button type="submit" className=
+                        {`login__submit-button ${!form.isValid && "login__button_disabled"}`}
+                        disabled={!form.isValid}>
                         Войти
                     </button>
                 </form>
-                <Link exact to="/signup" className="login__link">
+                <Link to="/signup" className="login__link">
                     <span className="login__signup">Ещё не зарегистрированы? </span> <span className="login__signin">Регистрация</span>
                 </Link>
             </div>

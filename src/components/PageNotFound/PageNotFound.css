@@ -6,6 +6,7 @@
 .error-page__container {
     text-align: center;
     padding-top: 246px;
+    padding-bottom: 60px;
 }
 
 .error-page__header {
@@ -38,6 +39,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #4285F4;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 900px) {
