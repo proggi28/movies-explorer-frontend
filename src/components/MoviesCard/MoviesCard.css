@@ -115,4 +115,8 @@
     .movies-card {
         max-width: 300px;
     }
+
+    .movies-card__delete-button {
+        visibility: visible;
+    }
 }
