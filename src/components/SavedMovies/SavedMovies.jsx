@@ -21,7 +21,7 @@ const SavedMovies = () => {
         const filtered = searchMovieFilter(savedMovies, query, isShort);
 
         if (filtered.length === 0) {
-            setErrorMessage('NOT_FOUND_MESSAGE');
+            setErrorMessage('Ничего не найдено');
         }
         setMovies(filtered);
         setLoading(false);
@@ -36,7 +36,7 @@ const SavedMovies = () => {
                 localStorage.setItem('savedMovies', JSON.stringify(otherMovies));
                 setLoading(false);
                 if (savedMovies.length === 0) {
-                    setErrorMessage('EMPTY_LIST_MESSAGE');
+                    setErrorMessage('Вы еще ничего не добавили в избранное');
                 }
             })
             .catch((err) => {console.log(err)});

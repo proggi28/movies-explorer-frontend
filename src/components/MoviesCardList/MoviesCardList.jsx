@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { MOVIES_1280, MOVIES_490, MOVIES_900, MOVIES_1154, MOVIES_STEP_1280, MOVIES_STEP_1154, MOVIES_STEP_490, MOVIES_STEP_900 } from "../../utils/constants";
 
-const MoviesCardList = ({ movies }) => {
+const MoviesCardList = ({ movies, errorMessage }) => {
     const [showMore, setShowMore] = useState(0);
     const [step, setStep] = useState(0);
     const location = useLocation();
@@ -50,7 +50,10 @@ const MoviesCardList = ({ movies }) => {
     return (
         <>
             <div className="movies-cards">
-                <ul className="movies-cards__list">
+                {errorMessage ? (
+                    <span className="movies__error">{errorMessage}</span>
+                ) : (
+                    <ul className="movies-cards__list">
                     {
                         movies.map((movie, index) => {
                             if (index < showMore) {
@@ -61,6 +64,7 @@ const MoviesCardList = ({ movies }) => {
                         })
                     }
                 </ul>
+                )}
             </div>
             <section className="more-films">
                 <div className="more-films__container">
