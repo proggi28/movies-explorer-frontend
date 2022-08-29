@@ -42,15 +42,17 @@
     text-align: center;
     letter-spacing: -0.04em;
     color: #FFFFFF;
-    margin: 0 410px;
+    margin: 0 auto;
 }
 
 .technologies__list {
     margin: 0 auto;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 100px;
+    padding: 0;
 }
 
 .technologies__list-blocks {
@@ -71,9 +73,12 @@
     letter-spacing: -0.04em;
 }
 
+.technologies__list-blocks:last-child {
+    margin-right: 0;
+}
+
 @media screen and (max-width: 900px) {
     .technologies__text {
-        max-width: 460px;
         font-size: 12px;
         line-height: 18px;
         margin: 0 154px;
@@ -85,18 +90,28 @@
 
     .technologies__header {
         margin: 0 50px;
-        max-width: 668px;
     }
 
     .technologies__list-blocks {
         font-size: 12px;
         line-height: 15px;
+        width: 84px;
+        height: 57px;
+        margin-bottom: 10px;
     }
+/* 
+    .technologies__list-blocks:first-child {
+        margin-left: 10px;
+    }
+
+    .technologies__list-blocks:last-child {
+        margin-right: 10px;
+    } */
 }
 
     @media screen and (max-width: 490px) {
         .technologies {
-            padding-top: 70px;
+            padding-top: 0;
             background-color: #202020;
         }
 
@@ -104,10 +119,9 @@
             font-size: 18px;
             line-height: 22px;
             border-bottom: 1px solid #000;
-            max-width: 284px;
             padding-bottom: 28px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 18px;
+            margin-right: 18px;
         }
 
         .technologies__description {
@@ -132,12 +146,15 @@
             grid-template-rows: repeat(4, 1fr);
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin: 50px 71px 0;
+            margin: 50px auto 0;
             padding: 0;
             align-items: center;
+            max-width: 178px;
         }
 
         .technologies__list-blocks {
             margin: 0 auto;
+            width: 84px;
+            height: 57px;
         }
     }

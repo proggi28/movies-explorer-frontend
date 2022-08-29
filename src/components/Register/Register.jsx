@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import './Register.css';
 import logo from '../../images/png/header-logo.png'
 import { Link } from "react-router-dom";
+import { useForm } from "../../utils/useForm";
 
-function Register() {
+const Register = ({ handleSignUp, error }) => {
+    const registerFormRef = useRef(null);
+    const form = useForm();
+
+    const { name, email, password } = form.values;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (email && password && name) {
+            handleSignUp(email, password, name);
+            registerFormRef.current.reset();
+        }
+    };
+
     return (
         <div className="register">
             <div className="register__container">
@@ -12,54 +27,66 @@ function Register() {
                 <form
                     name="register-form"
                     className="form register__form"
+                    ref={registerFormRef}
+                    onSubmit={handleSubmit}
+                    noValidate
                 >   <label className="register__label-name">Имя
                         <input
                             name="name"
                             id="name-input"
                             type="text"
-                            className="register__input form__input input input_type_name"
+                            value={name || ''}
+                            onChange={form.handleChange}
+                            className="register__input"
                             placeholder="Введите имя"
                             minLength="4"
                             maxLength="40"
                             required
                         />
                     </label>
-                    <span className="form__input-error email-input-error"></span>
-
+                    <span className="register__error">{`${form.errors.name ? form.errors.name : ""
+                        }`}</span>
                     <label className="register__label-name">Email
                         <input
                             name="email"
                             id="email-input"
                             type="email"
-                            className="register__input form__input input input_type_email"
+                            value={email || ''}
+                            onChange={form.handleChange}
+                            className="register__input"
                             placeholder="Введите email"
                             minLength="4"
                             maxLength="40"
                             required
                         />
                     </label>
-                    <span className="form__input-error email-input-error"></span>
-
+                    <span className="register__error">{`${form.errors.email ? form.errors.email : ""
+                        }`}</span>
                     <label className="register__label-name">Пароль
                         <input
                             name="password"
                             id="password-input"
                             type="password"
-                            className="register__input form__input input input_type_password"
+                            value={password || ''}
+                            onChange={form.handleChange}
+                            className="register__input"
                             placeholder="Введите пароль"
-                            minLength="2"
-                            maxLength="40"
+                            minLength="8"
                             required
                         />
                     </label>
-                    <span className="form__input-error password-input-error"></span>
-
-                    <button type="submit" className="register__submit-button form__submit">
+                    <span className="register__error">
+                        {`${form.errors.password ? form.errors.password : ""}`}
+                    </span>
+                    {error ? <span className="text__error">{error}</span> : ""}
+                    <button type="submit" className=
+                        {`register__submit-button ${!form.isValid && "register__button_disabled"}`}
+                        disabled={!form.isValid}>
                         Зарегистрироваться
                     </button>
                 </form>
-                <Link exact to="/signin" className="register__link">
-                    <span className="register__signup">Уже зарегистрированы? </span> <span className="register__signin">Войти</span> 
+                <Link to="/signin" className="register__link">
+                    <span className="register__signup">Уже зарегистрированы? </span> <span className="register__signin">Войти</span>
                 </Link>
             </div>
         </div>

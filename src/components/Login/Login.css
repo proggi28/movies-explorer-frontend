@@ -25,6 +25,15 @@
     margin-top: 50px;
 }
 
+.login__error {
+    display: block;
+    color: #EE3465;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    margin: 6px 0;
+}
+
 .login__label-name {
     font-family: 'Inter';
     font-style: normal;
@@ -49,7 +58,7 @@
     outline: none;
 }
 
-.login__input:hover {
+.login__input:focus {
     outline: 1px solid gray;
     border-radius: 4px;
 }
@@ -81,6 +90,21 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+}
+
+.login__submit-button:hover {
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.login__button_disabled {
+    background: gray;
+}
+
+.login__button_disabled:hover {
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .login__link {

@@ -26,6 +26,15 @@
     margin-top: 50px;
 }
 
+.register__error {
+    display: block;
+    color: #EE3465;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    margin: 6px 0;
+}
+
 .register__label-name {
     font-family: 'Inter';
     font-style: normal;
@@ -50,7 +59,7 @@
     outline: none;
 }
 
-.register__input:hover {
+.register__input:focus {
     outline: 1px solid gray;
     border-radius: 4px;
 }
@@ -82,6 +91,21 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+}
+
+.register__submit-button:hover {
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.register__button_disabled {
+    background: gray;
+}
+
+.register__button_disabled:hover {
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .register__link {
@@ -120,8 +144,13 @@
     color: #4285F4;
 }
 
-.input_type_password {
+.text__error {
+    display: block;
     color: #EE3465;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    margin: 6px 0;
 }
 
 @media screen and (max-width: 490px) {

@@ -20,8 +20,8 @@
 .about-me__description {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 70px;
+    align-items: flex-start;
+    margin: 66px 70px 0;
 }
 
 .about-me__name {
@@ -32,6 +32,8 @@
     line-height: 58px;
     letter-spacing: -0.04em;
     color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 16px;
 }
 
 .about-me__profession {
@@ -74,8 +76,10 @@
 }
 
 .about-me__photo-size {
+    /* width: 270px;
+    height: 327px; */
+    max-width: 100%;
     width: 270px;
-    height: 327px;
     border-radius: 5%;
 }
 
@@ -123,13 +127,22 @@
 
 @media screen and (max-width: 900px) {
     .about-me__header {
-        max-width: 668px;
         margin: 0 50px;
+    }
+
+    .about-me__description {
+        margin: 0 50px;
+        align-items: flex-start;
+        padding-top: 66px;
     }
 
     .about-me__name {
         font-size: 40px;
         line-height: 40px;
+    }
+
+    .about-me__text {
+        padding-right: 49px;
     }
 
     .about-me__profession {
@@ -143,43 +156,53 @@
         max-width: 364px;
     }
 
-    .about-me__photo-size {
+    /* .about-me__photo-size {
         width: 255px;
         height: 307px;
         border-radius: 5%;
-    }
+    } */
 
     .about-me__description {
         margin: 0 50px;
     }
 }
 
+@media screen and (max-width: 555px) {
+    .about-me__text {
+        padding-right: 10px;
+    }
+}
+
 @media screen and (max-width: 490px) {
+    .about-me {
+        padding-top: 0;
+    }
+
+    .about-me__text {
+        padding-right: 0;
+    }
+
     .about-me__description {
         flex-direction: column-reverse;
-        margin-left: 14px;
-        margin-right: 14px;
+        align-items: center;
+        margin: 0 14px;
+        padding-top: 0;
     }
 
     .about-me__header {
         font-size: 18px;
         line-height: 22px;
-        max-width: 292px;
         padding-bottom: 28px;
-        margin: 0 auto;
+        margin: 0 14px;
         margin-bottom: 60px;
     }
 
     .about-me__photo {
-        margin: 0 14px;
         text-align: center;
     }
 
     .about-me__photo-size {
         width: 292px;
-        height: 352px;
-        overflow: hidden;
-        border-radius: 5%;
     }
 
     .about-me__portfolio {
